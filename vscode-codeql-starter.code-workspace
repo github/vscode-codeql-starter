@@ -28,6 +28,9 @@
 	"settings": {
 		"ql.distribution.includePrerelease": true,
 		"ql.distribution.owner": "github",
-		"ql.distribution.repository": "codeql-cli-binaries"
+		"ql.distribution.repository": "codeql-cli-binaries",
+		"remote.containers.defaultExtensions": [
+			"github.vscode-codeql"
+		]
 	}
 }
