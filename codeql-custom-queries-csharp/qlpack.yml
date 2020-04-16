@@ -1,3 +1,0 @@
-name: codeql-custom-queries-csharp
-version: 0.0.0
-libraryPathDependencies: codeql-csharp
