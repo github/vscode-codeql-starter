@@ -24,10 +24,5 @@
 		{
 			"path": "ql"
 		}
-	],
-	"settings": {
-		"ql.distribution.includePrerelease": true,
-		"ql.distribution.owner": "github",
-		"ql.distribution.repository": "codeql-cli-binaries"
-	}
+	]
 }
