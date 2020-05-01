@@ -56,7 +56,7 @@ You can set up this workspace in [Visual Studio Code](https://marketplace.visual
 
 ## Running a boosted security query in Visual Studio Code
 
-1. Clone this repository to your computer.
+1. Clone this repository to your computer and check out the `experimental/atm` branch.
 1. Download the submodules by running `git submodule update --init --remote` from a terminal with a current working directory of the cloned repository.
 1. In VS Code, click **File** > **Open Workspace**. Select the file `vscode-codeql-starter.code-workspace` in your checkout of this repository.
 1. You will see several folders open in the left sidebar:
