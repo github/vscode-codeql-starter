@@ -1,6 +1,6 @@
 # vscode-codeql-starter for Adaptive Threat Modeling
 
-You can set up this workspace in [Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=github.vscode-codeql) to get started with adaptive threat modeling.
+You can set up this workspace in [Visual Studio Code](https://code.visualstudio.com) to get started with adaptive threat modeling.
 
 **Note: Adaptive threat modeling is in beta and subject to change. It is currently only available for JavaScript and TypeScript code.**
 
