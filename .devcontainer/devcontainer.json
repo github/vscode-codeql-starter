@@ -1,5 +1,6 @@
 {
   "extensions": [
     "github.vscode-codeql"
-  ]
+  ],
+  "initializeCommand": "git submodules update --recursive"
  }
