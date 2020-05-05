@@ -1,6 +1,7 @@
 {
   "extensions": [
-    "github.vscode-codeql"
+    "github.vscode-codeql",
+    "slevesque.vscode-zipexplorer"
   ],
   "postCreateCommand": "git submodule init && git submodule update --recursive"
  }
