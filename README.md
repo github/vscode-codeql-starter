@@ -90,14 +90,11 @@ To keep these up to date, run `git submodule update --remote` regularly.
 
 ## Support and feedback
 
-We want to help you get the most from ATM, and also hear your feedback.
-
-- "[Support and feedback](https://github.com/github/codeql/blob/experimental/atm/javascript/ql/src/experimental/adaptivethreatmodeling/docs/support-and-feedback.md)".
-- Report issues or suggestions in the [#codeql-atm-beta](https://ghsecuritylab.slack.com/archives/C011BJD7279) channel on the GitHub Security Lab Slack instance.
+We want to help you get the most from ATM, and also hear your feedback. For more information, see "[Support and feedback](https://github.com/github/codeql/blob/experimental/atm/javascript/ql/src/experimental/adaptivethreatmodeling/docs/support-and-feedback.md)."
 
 ## Contributing
 
-This project welcomes contributions. See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
+This project welcomes contributions. For more information, see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License
 
