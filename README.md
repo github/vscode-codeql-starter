@@ -18,7 +18,7 @@ A starter workspace to use with the [CodeQL extension for Visual Studio Code](ht
 
 ## Using the `vscode-codeql-starter` in a private repository
 
-If you want to privately share your Code QL queries with your teammates using this project as a template:
+If you want to privately share your CodeQL queries with your teammates using this project as a template:
 
 1. Create an empty, private project in the organization you want.
 1. Clone this project locally: `git clone git@github.com:github/vscode-codeql-starter.git`
