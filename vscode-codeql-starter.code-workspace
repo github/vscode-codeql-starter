@@ -24,5 +24,8 @@
 		{
 			"path": "ql"
 		}
-	]
+	],
+	"settings": {
+		"omnisharp.autoStart": false
+	}
 }
