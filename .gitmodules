@@ -1,6 +1,6 @@
 [submodule "ql"]
 	path = ql
-	url = https://github.com/Semmle/ql.git
+	url = https://github.com/github/codeql.git
 	branch = lgtm.com
 [submodule "codeql-go"]
 	path = codeql-go
