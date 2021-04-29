@@ -15,4 +15,4 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Push main to master
-        run: git push origin main:master
+        run: git push -f origin main:master
