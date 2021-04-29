@@ -9,6 +9,7 @@ on:
 jobs:
   mirror-main-to-master:
     runs-on: ubuntu-latest
+    if: github.repository == 'github/vscode-codeql-starter'
 
     steps:
       - uses: actions/checkout@v2
