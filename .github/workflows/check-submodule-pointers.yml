@@ -3,23 +3,28 @@ name: Check submodule pointers
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
 
 jobs:
   check-submodules:
     runs-on: ubuntu-latest
-
+    if: github.repository == 'github/vscode-codeql-starter'
     steps:
       - uses: actions/checkout@v2
 
       - name: Compare submodule pointers to lgtm.com branch
         env: 
-          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-            if [ $(git rev-parse @:./ql) != $(gh api repos/github/codeql/git/ref/heads/lgtm.com --jq '.object.sha') ] || \
-               [ $(git rev-parse @:./codeql-go) != $(gh api repos/github/codeql-go/git/ref/heads/lgtm.com --jq '.object.sha') ]
-            then
-              echo "Submodules are out-of-date. Please update submodule pointers to the latest lgtm.com branch."
+            CODEQL_ACTUAL_SHA="$(git rev-parse @:./ql)"
+            CODEQL_EXPECTED_SHA="$(gh api repos/github/codeql/git/ref/heads/lgtm.com --jq '.object.sha')"
+            if [ "$CODEQL_EXPECTED_SHA" != "$CODEQL_ACTUAL_SHA" ]; then 
+              echo "::error:: The ql submodule is out of date with the lgtm.com branch of github/codeql. Expected $CODEQL_EXPECTED_SHA, found $CODEQL_ACTUAL_SHA."
+              exit 1
+            fi
+
+            CODEQL_GO_ACTUAL_SHA="$(git rev-parse @:./codeql-go)"
+            CODEQL_GO_EXPECTED_SHA="$(gh api repos/github/codeql-go/git/ref/heads/lgtm.com --jq '.object.sha')"
+            if [ "$CODEQL_GO_EXPECTED_SHA" != "$CODEQL_GO_ACTUAL_SHA" ]; then 
+              echo "::error:: The codeql-go submodule is out of date with the lgtm.com branch of github/codeql-go. Expected $CODEQL_GO_EXPECTED_SHA, found $CODEQL_GO_ACTUAL_SHA."
               exit 1
             fi
