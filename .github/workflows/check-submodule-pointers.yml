@@ -12,27 +12,14 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-        with:
-          submodules: true
 
-      - name: Check ql submodule
+      - name: Compare submodule pointers to lgtm.com branch
         env: 
           GITHUB_TOKEN: ${{ github.token }}
         run: |
-          # Tip of the lgtm.com branch
-          target_sha=$(gh api repos/github/codeql/git/ref/heads/lgtm.com --jq '.object.sha')
-          
-          if [ $(git rev-parse @:./ql) == $target_sha ]; then
-            echo "The ql submodule already points to the tip of the lgtm.com branch. Nothing to do."
-          else
-            cd ql
-            git fetch origin $target_sha
-            git checkout $target_sha
-            cd ..
-            git add ql
-            git config user.name "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git commit -m "Bump ql submodule to latest lgtm.com"
-            git push origin $GITHUB_REF
-          fi 
-# Do similar thing for codeql-go
+            if [ $(git rev-parse @:./ql) != $(gh api repos/github/codeql/git/ref/heads/lgtm.com --jq '.object.sha') ] || \
+               [ $(git rev-parse @:./codeql-go) != $(gh api repos/github/codeql-go/git/ref/heads/lgtm.com --jq '.object.sha') ]
+            then
+              echo "Submodules are out-of-date. Please update submodule pointers to the latest lgtm.com branch."
+              exit 1
+            fi
