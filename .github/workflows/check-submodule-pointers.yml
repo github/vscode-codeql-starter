@@ -1,6 +1,7 @@
 name: Check submodule pointers
 
 on:
+  workflow_dispatch:
   push:
     branches: [ main ]
   schedule:
