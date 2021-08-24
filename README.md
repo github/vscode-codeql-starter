@@ -14,7 +14,7 @@ A starter workspace to use with the [CodeQL extension for Visual Studio Code](ht
     - The `ql` folder contains the [open-source CodeQL standard libraries](https://github.com/github/codeql/tree/lgtm.com) for C/C++, C#, Java, JavaScript, and Python. It tracks the `lgtm.com` branch. You can run the standard queries from here, and browse the libraries.
     - The `codeql-go` folder contains the [open-source CodeQL standard libraries](https://github.com/github/codeql-go/tree/lgtm.com) for Go. It tracks the `lgtm.com` branch. You can run the standard queries from here, and browse the libraries.
     - The folders named `codeql-custom-queries-<language>` are ready for you to start developing your own custom queries for each language, while using the standard libraries. There are some example queries to get you started.
-1. Follow the [documentation for the CodeQL extension](https://help.semmle.com/codeql/codeql-for-vscode.html) to learn how to set up the extension, add a database and run queries against it. Have fun!
+1. Follow the [documentation for the CodeQL extension](https://codeql.github.com/docs/codeql-for-visual-studio-code/) to learn how to set up the extension, add a database and run queries against it. Have fun!
 
 ## Using the `vscode-codeql-starter` in a private repository
 
@@ -23,7 +23,7 @@ If you want to privately share your CodeQL queries with your teammates using thi
 1. Create an empty, private project in the organization you want.
 1. Clone this project locally: `git clone git@github.com:github/vscode-codeql-starter.git`
 1. Add a remote to the local copy `git remote add my-org git@github.com:<MY-ORG>/vscode-codeql-starter.git`
-1. Push the code to the new remote: `git push my-org master`
+1. Push the code to the new remote: `git push my-org main`
 
 GitHub does not allow private forks of public repositories.
 
@@ -33,10 +33,10 @@ This project welcomes contributions. See [CONTRIBUTING.md](CONTRIBUTING.md) for 
 
 ## Reporting issues
 
-Issues and suggestions should be reported in the [`vscode-codeql` repo](https://github.com/github/vscode-codeql/issues/new).
+Issues and suggestions should be reported in the [`vscode-codeql` repo](https://github.com/github/vscode-codeql/issues/new/choose).
 
 ## License
 
 This project is [licensed](LICENSE.md) under the MIT License. 
 
-The CodeQL extension for Visual Studio Code is [licensed](https://github.com/github/vscode-codeql/blob/master/extensions/ql-vscode/LICENSE.md) under the MIT License. The version of CodeQL used by the CodeQL extension is subject to the [GitHub CodeQL Terms & Conditions](https://securitylab.github.com/tools/codeql/license).
+The CodeQL extension for Visual Studio Code is [licensed](https://github.com/github/vscode-codeql/blob/main/extensions/ql-vscode/LICENSE.md) under the MIT License. The version of CodeQL used by the CodeQL extension is subject to the [GitHub CodeQL Terms & Conditions](https://securitylab.github.com/tools/codeql/license).
