@@ -1,0 +1,27 @@
+# Creates an issue when the submodule pointer check fails on the main branch.
+name: Report failure
+
+on:
+  workflow_run:
+    workflows: ['Check submodule pointers']
+    branches: [main]
+    types: [completed]
+
+jobs:
+   report-failure:
+    runs-on: ubuntu-latest
+    if: ${{ github.repository == 'github/vscode-codeql-starter' && github.event.workflow_run.conclusion == 'failure' }}
+    permissions:
+      issues: write
+    steps:
+      - name: Create issue
+        env: 
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          WORKFLOW_RUN_URL: ${{ github.event.workflow_run.html_url }}
+        run: |
+          TODAY="$(date "+%Y-%m-%d")"
+          gh issue create \
+            --repo "$GITHUB_REPOSITORY" \
+            --title "Submodule pointers out of date: $TODAY" \
+            --body "Submodule pointer check failed: $WORKFLOW_RUN_URL"
+
