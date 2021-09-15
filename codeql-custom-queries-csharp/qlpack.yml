@@ -1,3 +1,7 @@
-name: codeql-custom-queries-csharp
+# Change 'getting-started' to the name of a user or organization that you have write access to.
+name: getting-started/codeql-extra-queries-csharp
 version: 0.0.0
-libraryPathDependencies: codeql-csharp
+dependencies:
+  # This uses the latest version of the codeql/csharp-all library.
+  # You may want to change to a more precise semver string.
+  codeql/csharp-all: "*"
