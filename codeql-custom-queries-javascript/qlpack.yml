@@ -1,3 +1,7 @@
-name: codeql-custom-queries-javascript
+# Change 'getting-started' to a user name or organization that you have write access to
+name: getting-started/codeql-extra-queries-javascript
 version: 0.0.0
-libraryPathDependencies: codeql-javascript
+dependencies:
+  # This uses the latest version of the codeql/javascript-all library.
+  # You may want to change to a more precise semver string.
+  codeql/javascript-all: "*"

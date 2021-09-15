@@ -1,3 +1,7 @@
-name: codeql-custom-queries-go
+# Change 'getting-started' to the name of a user or organization that you have write access to.
+name: getting-started/codeql-extra-queries-go
 version: 0.0.0
-libraryPathDependencies: codeql-go
+dependencies:
+  # This uses the latest version of the codeql/go-all library.
+  # You may want to change to a more precise semver string.
+  codeql/go-all: "*"

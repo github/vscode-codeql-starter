@@ -1,3 +1,7 @@
-name: codeql-custom-queries-cpp
+# Change 'getting-started' to the name of a user or organization that you have write access to.
+name: getting-started/codeql-extra-queries-cpp
 version: 0.0.0
-libraryPathDependencies: codeql-cpp
+dependencies:
+  # This uses the latest version of the codeql/cpp-all library.
+  # You may want to change to a more precise semver string.
+  codeql/cpp-all: "*"
