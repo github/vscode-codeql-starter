@@ -8,5 +8,5 @@
 import ruby
 
 from Block b
-where b.getNumberOfStatements()= 0
+where b.getNumberOfStatements() = 0
 select b, "This is an empty block."
