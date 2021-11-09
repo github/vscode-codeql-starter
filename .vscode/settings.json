@@ -1,0 +1,15 @@
+{
+    "codeQL.canary": true,
+    "codeQL.runningQueries.memory": 2048,
+    "codeQL.remoteQueries.repositoryLists": {
+    "my-favourite-go-repos": [
+        "dsp-testing/qc-demo-github-certstore",
+        "dsp-testing/qc-demo-github-freno",
+        "dsp-testing/qc-demo-github-vulcanizer"
+    ],
+    "javascript-repos": [
+        "github/semmle-code",
+        "dsp-testing/special-disco"
+    ]
+  }
+}
