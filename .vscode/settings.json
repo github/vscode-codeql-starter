@@ -1,5 +1,6 @@
 {
     "codeQL.canary": true,
+    "codeQL.telemetry.enableTelemetry": true,
     "codeQL.remoteQueries.controllerRepo": "jf205/codeql-starter",
     "codeQL.remoteQueries.repositoryLists": {
         "cpp-all": [
