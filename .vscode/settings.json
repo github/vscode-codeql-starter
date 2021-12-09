@@ -11,6 +11,9 @@
             "query": "state:open repo:jf205/codeql-starter sort:created-desc 'Query run by jf205'"
         }
     ],
+    "github-actions.workflows.pinned.workflows": [
+        "dynamic/codeql/queries"
+    ],
     "codeQL.remoteQueries.controllerRepo": "dsp-testing/qc-controller",
     "codeQL.remoteQueries.repositoryLists": {
         "github-javascript": [
@@ -1121,8 +1124,5 @@
             "zotero/zotero",
             "zulip/zulip",
             "zwave-js/node-zwave-js"
-        ],
-        "github-actions.workflows.pinned.workflows": [
-            "dynamic/codeql/queries"
         ]
     }
