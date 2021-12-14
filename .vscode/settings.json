@@ -1,20 +1,7 @@
 {
     "codeQL.canary": true,
     "codeQL.telemetry.enableTelemetry": true,
-    "githubIssues.queries": [
-        {
-            "label": "My Issues",
-            "query": "default"
-        },
-        {
-            "label": "Remote query results",
-            "query": "state:open repo:jf205/codeql-starter sort:created-desc 'Query run by jf205'"
-        }
-    ],
-    "github-actions.workflows.pinned.workflows": [
-        "dynamic/codeql/queries"
-    ],
-    "codeQL.remoteQueries.controllerRepo": "dsp-testing/qc-controller",
+    "codeQL.remoteQueries.controllerRepo": "jf205/codeql-starter",
     "codeQL.remoteQueries.repositoryLists": {
         "github-javascript": [
             "github/authzd",
@@ -75,9 +62,6 @@
             "bndtools/bnd",
             "crate/crate",
             "diffplug/spotless",
-            "dsp-testing/ghas-intro-6",
-            "github/codeql-action",
-            "github/semmle-code",
             "gradle/gradle",
             "hapifhir/hapi-fhir",
             "jnidzwetzki/bboxdb",
@@ -1164,5 +1148,18 @@
             "zotero/zotero",
             "zulip/zulip",
             "zwave-js/node-zwave-js"
-        ]
+        ],
+        "githubIssues.queries": [
+        {
+            "label": "My Issues",
+            "query": "default"
+        },
+        {
+            "label": "Remote query results",
+            "query": "state:open repo:jf205/codeql-starter sort:created-desc 'Query run by jf205'"
+        }
+    ],
+    "github-actions.workflows.pinned.workflows": [
+        "dynamic/codeql/queries"
+    ],
     }
