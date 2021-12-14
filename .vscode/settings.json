@@ -1149,7 +1149,8 @@
             "zulip/zulip",
             "zwave-js/node-zwave-js"
         ],
-        "githubIssues.queries": [
+    },
+    "githubIssues.queries": [
         {
             "label": "My Issues",
             "query": "default"
@@ -1162,4 +1163,4 @@
     "github-actions.workflows.pinned.workflows": [
         "dynamic/codeql/queries"
     ],
-    }
+}
