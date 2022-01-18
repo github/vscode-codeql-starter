@@ -35,7 +35,8 @@
             "github/dependency-graph-api",
             "github/esb-tools",
             "github/failbotg",
-            "github/octoshift"
+            "github/octoshift",
+            "github/github"
         ],
         "oss-ruby": [
             "Flowminder/FlowKit",
@@ -82,6 +83,35 @@
             "webauthn4j/webauthn4j",
             "zeroc-ice/ice",
             "zxing/zxing"
+        ],
+        "oss-java-short": [
+            "B3Partners/tailormap",
+            "Hack23/cia",
+            "Hongbo-Miao/hongbomiao.com",
+            "MegaMek/mekhq",
+            "NCI-Agency/anet",
+            "Yubico/java-webauthn-server",
+            "alfio-event/alf.io",
+            "apache/cxf",
+            "apache/incubator-shenyu",
+            "apache/myfaces-tobago",
+            "apple/servicetalk",
+            "assertj/assertj-core",
+            "bndtools/bnd",
+            "crate/crate",
+            "diffplug/spotless",
+            "gradle/gradle",
+            "hapifhir/hapi-fhir",
+            "jnidzwetzki/bboxdb",
+            "killbill/killbill",
+            "kubernetes-client/java",
+            "netty/netty",
+            "nextcloud/news-android",
+            "odpi/egeria",
+            "oracle/weblogic-kubernetes-operator",
+            "qiniu/java-sdk",
+            "reactor/reactor-netty",
+            "redis/jedis"
         ],
         "oss-javascript-short": [
             "microsoft/ApplicationInsights-JS",
