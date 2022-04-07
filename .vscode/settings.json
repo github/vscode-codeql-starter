@@ -1,9 +1,9 @@
 {
     "codeQL.canary": true,
     "codeQL.telemetry.enableTelemetry": true,
-    "codeQL.remoteQueries.controllerRepo": "dsp-testing/qc-controller",
-    "codeQL.remoteQueries.repositoryLists": {
-        "github-javascript": [
+    "codeQL.variantAnalysis.controllerRepo": "dsp-testing/qc-controller",
+    "codeQL.variantAnalysis.repositoryLists": {
+        "my-list-of-javascript-repos": [
             "github/Dynamic-Template-Engine",
             "github/aura",
             "github/authzd",
@@ -228,7 +228,6 @@
             "microsoft/pxt-microbit",
             "microsoft/react-native-code-push",
             "microsoft/rushstack",
-            "microsoft/vscode",
             "microsoft/vscode-pull-request-github",
             "microsoft/vscode-react-native",
             "microsoft/vscode-vsce",
@@ -1280,6 +1279,13 @@
             "zulip/zulip",
             "zwave-js/node-zwave-js"
         ],
+        "vercel-examples": [
+            "vercel/react-jsx-parser",
+            "vercel/nft",
+            "vercel/now-desktop",
+            "vercel/micro",
+            "vercel/platforms"
+        ]
     },
     "githubIssues.queries": [
         {
