@@ -2,7 +2,3 @@
 	path = ql
 	url = https://github.com/github/codeql.git
 	branch = lgtm.com
-[submodule "codeql-go"]
-	path = codeql-go
-	url = https://github.com/github/codeql-go.git
-	branch = lgtm.com
