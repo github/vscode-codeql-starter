@@ -27,11 +27,3 @@ jobs:
               echo "::error:: The ql submodule is out of date with the lgtm.com branch of github/codeql. Expected $CODEQL_EXPECTED_SHA, found $CODEQL_ACTUAL_SHA."
               exit 1
             fi
-
-            CODEQL_GO_ACTUAL_SHA="$(git rev-parse @:./codeql-go)"
-            CODEQL_GO_EXPECTED_SHA="$(gh api repos/github/codeql-go/git/ref/heads/lgtm.com --jq '.object.sha')"
-            echo "The codeql-go submodule currently points to $CODEQL_GO_ACTUAL_SHA. The tip of the lgtm.com branch of github/codeql-go is $CODEQL_GO_EXPECTED_SHA."
-            if [ "$CODEQL_GO_EXPECTED_SHA" != "$CODEQL_GO_ACTUAL_SHA" ]; then 
-              echo "::error:: The codeql-go submodule is out of date with the lgtm.com branch of github/codeql-go. Expected $CODEQL_GO_EXPECTED_SHA, found $CODEQL_GO_ACTUAL_SHA."
-              exit 1
-            fi
