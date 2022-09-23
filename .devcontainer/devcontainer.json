@@ -3,7 +3,6 @@
     "github.vscode-codeql",
     "slevesque.vscode-zipexplorer"
   ],
-  "postCreateCommand": "git submodule init && git submodule update --recursive",
   "postCreateCommand": "code vscode-codeql-starter.code-workspace",
   "settings": {
     "codeQL.runningQueries.memory": 2048
