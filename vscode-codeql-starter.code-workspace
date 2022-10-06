@@ -22,9 +22,6 @@
 			"path": "codeql-custom-queries-ruby"
 		},
 		{
-			"path": "codeql-go"
-		},
-		{
 			"path": "ql"
 		}
 	],
