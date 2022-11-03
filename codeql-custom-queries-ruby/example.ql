@@ -6,6 +6,7 @@
  */
 
 import ruby
+import codeql.ruby.AST
 
 from Block b
 where b.getNumberOfStatements() = 0
