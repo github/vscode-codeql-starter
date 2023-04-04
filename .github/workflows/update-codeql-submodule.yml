@@ -1,0 +1,72 @@
+# Ensures the `ql` submodule is up to date, creating a PR if necessary.
+name: Update CodeQL submodule
+on:
+  workflow_dispatch:
+
+jobs:
+  update-codeql-submodule:
+    name: Update CodeQL submodule
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    env:
+      # Unique branch name for each run of this workflow.
+      BRANCH_NAME: 'update-codeql-submodule-${{ github.run_id }}-${{ github.run_attempt }}'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 1
+          submodules: recursive
+
+      - name: Git config
+        shell: bash
+        run: |
+          set -exu
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          echo "Creating a new branch: ${BRANCH_NAME}"
+          git checkout -b "${BRANCH_NAME}"
+
+          echo "Fetching refs"
+          # Explicitly unshallow and fetch to ensure the submodule's remote ref is available.
+          pushd ql
+          git fetch --unshallow origin +lgtm.com:refs/remotes/origin/lgtm.com # must match branch name in gitmodules
+          popd
+
+      - name: Update submodule
+        id: update
+        shell: bash
+        run: |
+          echo "CODEQL_SHA_BEFORE=$(git rev-parse @:./ql)" | tee -a "$GITHUB_ENV"
+
+          echo "Updating CodeQL submodule"
+          git submodule update --init --remote
+
+          # Stage changes
+          git add ql
+          # Only commit if the working tree is not empty
+          if [[ -n "$(git diff --stat --cached)" ]]; then
+            echo "changed=true" | tee -a "$GITHUB_OUTPUT"
+            echo "::notice::Submodule has changes to commit. Will create a PR."
+          else
+            echo "::notice::No changes to commit."
+          fi
+
+      - name: Commit change and create PR
+        if: steps.update.outputs.changed == 'true'
+        shell: bash
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git commit -m "Update CodeQL submodule"
+          CODEQL_SHA_AFTER="$(git rev-parse @:./ql)"
+          echo "CODEQL_SHA_AFTER=$CODEQL_SHA_AFTER"
+          git push origin "$BRANCH_NAME"
+          gh pr create \
+            --title "Update CodeQL submodule" \
+            --body "Submodule pointer updated from github/codeql@${CODEQL_SHA_BEFORE} to github/codeql@${CODEQL_SHA_AFTER}." \
+            --draft \
+            --head "$BRANCH_NAME"
