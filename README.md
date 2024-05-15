@@ -13,7 +13,7 @@ A starter workspace to use with the [CodeQL extension for Visual Studio Code](ht
 1. You will see several folders open in the left sidebar:
     - The `ql` folder contains the [open-source CodeQL standard libraries](https://github.com/github/codeql/tree/codeql-cli/latest) for C/C++, C#, Go, Java, JavaScript/Typescript, Python, and Ruby. It tracks the branch tagged `codeql-cli/latest` in https://github.com/github/codeql. You can run the standard queries from here, and browse the libraries.
     - The folders named `codeql-custom-queries-<language>` are ready for you to start developing your own custom queries for each language, while using the standard libraries. There are some example queries to get you started.
-1. Follow the [documentation for the CodeQL extension](https://codeql.github.com/docs/codeql-for-visual-studio-code/) to learn how to set up the extension, add a database and run queries against it. Have fun!
+1. Follow the [documentation for the CodeQL extension](https://docs.github.com/en/code-security/codeql-for-vs-code/) to learn how to set up the extension, add a database and run queries against it. Have fun!
 
 ## Using the `vscode-codeql-starter` in a private repository
 
