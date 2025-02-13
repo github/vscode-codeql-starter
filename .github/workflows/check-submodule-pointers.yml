@@ -14,6 +14,9 @@ on:
   schedule:
     - cron: '42 12 * * *'
 
+permissions:
+  contents: read
+
 jobs:
   check-submodules:
     runs-on: ubuntu-latest
@@ -22,13 +25,13 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Compare submodule pointers to lgtm.com branch
-        env: 
+        env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
             CODEQL_ACTUAL_SHA="$(git rev-parse @:./ql)"
             CODEQL_EXPECTED_SHA="$(gh api repos/github/codeql/git/ref/heads/lgtm.com --jq '.object.sha')"
             echo "The ql submodule currently points to $CODEQL_ACTUAL_SHA. The tip of the lgtm.com branch of github/codeql is $CODEQL_EXPECTED_SHA."
-            if [ "$CODEQL_EXPECTED_SHA" != "$CODEQL_ACTUAL_SHA" ]; then 
+            if [ "$CODEQL_EXPECTED_SHA" != "$CODEQL_ACTUAL_SHA" ]; then
               echo "::error:: The ql submodule is out of date with the lgtm.com branch of github/codeql. Expected $CODEQL_EXPECTED_SHA, found $CODEQL_ACTUAL_SHA."
               exit 1
             fi

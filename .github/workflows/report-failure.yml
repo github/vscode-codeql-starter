@@ -15,7 +15,7 @@ jobs:
       issues: write
     steps:
       - name: Create issue
-        env: 
+        env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           WORKFLOW_RUN_URL: ${{ github.event.workflow_run.html_url }}
         run: |
@@ -24,4 +24,3 @@ jobs:
             --repo "$GITHUB_REPOSITORY" \
             --title "Submodule pointers out of date: $TODAY" \
             --body "Submodule pointer check failed: $WORKFLOW_RUN_URL"
-
