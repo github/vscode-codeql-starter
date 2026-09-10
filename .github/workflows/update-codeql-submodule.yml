@@ -68,5 +68,4 @@ jobs:
           gh pr create \
             --title "Update CodeQL submodule" \
             --body "Submodule pointer updated from github/codeql@${CODEQL_SHA_BEFORE} to github/codeql@${CODEQL_SHA_AFTER}." \
-            --draft \
             --head "$BRANCH_NAME"
