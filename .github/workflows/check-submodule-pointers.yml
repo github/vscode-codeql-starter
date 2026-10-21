@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     if: github.repository == 'github/vscode-codeql-starter'
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@a37ce9120846195fa4ece8f58b268e6043cb2f26 # v3.7.0
 
       - name: Compare submodule pointers to lgtm.com branch
         env:
